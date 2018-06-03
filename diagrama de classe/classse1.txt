@@ -1,0 +1,222 @@
+@startuml
+
+skinparam handwritten true
+
+Funcao "1" -- "*" Usuario
+Curso "*" - "1" TipoCurso
+Aluno "*" -- "*" Curso
+Aluno "*" -- "*" Aula
+Aluno "1" -- "*" NotaProvaAluno
+Prova "1" -- "*" NotaProvaAluno
+Disciplina "*" -- "1" Professor
+Disciplina "1" -- "*" Aluno
+Disciplina "1" -- "*" Prova
+Disciplina "1" -- "*" Aula
+
+
+Usuario <|-- Administrador
+Usuario <|-- Administrativo
+Usuario <|-- Professor
+Usuario <|-- Aluno
+
+class Funcao {
+	- descricao
+	+ getDescricao(): String
+	+ setDescricao(descricao: String): void
+}
+
+class Usuario {
+
+	- cpf: String
+	- nome: String
+	- usuario: String
+	- senha: String
+	- funcao: Funcao
+	+ {static} buscarPorCpf(cppf: String): Usuario
+	+ {static} buscarPorUsuarioESenha(usuario: String, senha: String): Usuario
+	+ getCpf(): String
+	+ getNome(): String
+	+ getUsuario(): String
+	+ getSenha(): String
+	+ getFuncao(): Funcao
+	+ setCpf(cpf: String): void
+	+ setNome(nome: String): void
+	+ setUsuario(usuario: String): void
+	+ setSenha(senha: String): void
+	+ setFuncao(funcao: Funcao): void
+	+ salvar(): void
+	+ remover(): void
+	+ login_UC(): void
+	+ logout_UC(): void
+}
+
+class Aluno {
+	- notas: Collection<NotaProvaAluno>
+	- aulas: Collection<Aula>
+	- cursos: Collection<Curso>
+	+ {static} buscarPorCpf(cpf: String): Aluno
+	+ getNotas(): Collection<NotaProvaAluno>
+	+ getAulas(): Collection<Aula>
+	+ getCursos(): Collection<Curso>
+	+ setNotas: Collection<NotaProvaAluno>): void
+	+ setAulas(aulas: Collection<Aula>): void
+	+ setCursos(cursos: Collection<Curso>): void
+	+ estaMatriculadoNaDisciplina(disciplina: Disciplina): Boolean
+	+ fezProva(prova: Prova): Boolean
+	+ visualizarTodosCursos_UC(): void
+	+ visualizarMeusCursos_UC(): void
+	+ visualizarUmCursos_UC(): void
+	+ visualizarTodasDisciplinas_UC(): void
+	+ visualizarMinhasDisciplinas_UC(): void
+	+ visualizarUmaDisciplinas_UC(): void
+	+ visualizarHistorico_UC(): void
+}
+
+class Professor {
+	- disciplinas: Collection<Disciplina>
+	+ getDisciplinas(): Collection<Disciplina>
+	+ setDisciplinas(disciplinas: Collection<Disciplina>): void
+	+ {static} buscarPorCpf(cppf: String): Professor
+	+ cadastrarAulaDisciplina_UC(): void
+	+ alterarAulaDisciplina_UC(): void
+	+ excluirAulaDisciplina_UC(): void
+	+ cadastrarProvaDisciplina_UC(): void
+	+ alterarProvaDisciplina_UC(): void
+	+ excluirProvaDisciplina_UC(): void
+	+ cadastrarPresencaAluno_UC(): void
+	+ excluirPresencaAlun_UC(): void
+	+ cadastrarAlterarNotaAlunoProva_UC(): void
+	+ excluirNotaAlunoProva_UC(): void
+}
+
+class Administrativo {
+	+ cadastrarCurso_UC(): void
+	+ alterarCurso_UC(): void
+	+ excluirCurso_UC(): void
+	+ cadastrarDisciplina_UC(): void
+	+ alterarDisciplina_UC(): void
+	+ excluirDisciplina_UC(): void
+	+ incluirAlunosCurso_UC(): void
+	+ excluriAlunosCurso_UC(): void
+	+ incluirAlunosDisciplina_UC(): void
+	+ excluirAlunosDisciplina_UC(): void
+}
+
+class Administrador {
+	+ cadastrarUsuario_UC(): void
+	+ alterarUsuario_UC(): void
+	+ excluirUsuario_UC(): void	
+}
+
+class TipoCurso {
+	- descricao: String
+	+ getDescricao(): String
+	+ setDescricao(descricao: String): void
+}
+
+class Curso {
+	- codigo: String
+	- nome: String
+	- tipoCurso: TipoCurso
+	- alunos: Collection<Aluno>
+	- gerarCodigo(): String
+	+ {static} buscarPorNome(nome: String): Curso
+	+ {static} buscarPorCodigo(codigo: String): Curso
+	+ {static} buscarPorAluno(aluno: Aluno): Collection<Curso>
+	+ getCodigo(): String
+	+ getNome(): String
+	+ getTipoCurso(): String
+	+ getAlunos(): Collection<Aluno>
+	+ setCodigo(codigo: String): void
+	+ setNome(nome: String): void
+	+ setTipoCurso(tipoCurso: TipoCurso): void
+	+ setAlunos(alunos: Collection<Aluno>): void
+	+ salvar(): void
+	+ remover(): void
+}
+
+class Aula {
+	- disciplina: Disciplina
+	- assunto: String
+	- data: Date
+	- hora: Time
+	- alunos: Collection<Aluno>
+	+ getDisciplina(): Disciplina
+	+ getAssunto(): String
+	+ getData(): Date
+	+ getHora(): Time
+	+ getAlunos(): Collection<Aluno>
+	+ setDisciplina(disciplina: Disciplina): void
+	+ setAssunto(assunto: String): void
+	+ setData(data: Date): void
+	+ setHora(hora: Time): void
+	+ setAlunos(alunos: Collection<Aluno>): void
+	+ salvar(): void
+	+ remover(): void
+}
+
+class Prova {
+	- disciplina: Disciplina
+	- descricao: String
+	- data: Date
+	- hora: Time
+	- notas: Collection<NotaProvaAluno>
+	+ getDisciplina(): Disciplina
+	+ getDescricao(): String
+	+ getData(): Date
+	+ getHora(): Time
+	+ getNotas(): Collection<NotaProvaAluno>
+	+ setDisciplina(disciplina: Disciplina): void
+	+ setDescricao(descricao: String): void
+	+ setData(data: Date): void
+	+ setHora(hora: Time): void
+	+ setNotas(notasProvaAlunos: Collection<NotaProvaAluno>): void
+	+ salvar(): void
+	+ remover(): void
+}
+
+class NotaProvaAluno {
+	- prova: Prova
+	- aluno: Aluno
+	- nota: Double
+	+ getProva(): Prova
+	+ getAluno(): Aluno
+	+ getNota(): Double
+	+ setProva(prova: Prova): void
+	+ setAluno(aluno: Aluno)
+	+ setNota(nota: Double)
+	+ salvar(): void
+	+ remover(): void
+}
+
+class Disciplina {
+	- codigo: String
+	- nome: String
+	- cargaHoraria: Integer
+	- professor: Professor
+	- alunos: Collection<Aluno>
+	- aulas: Collection<Aula>
+	- provas: Collection<Prova>
+	- geraCodigo(): String
+	+ {static} buscarPorNome(nome: String): Disciplina
+	+ {static} buscarPorCodigo(codigo: String): Disciplina
+	+ {static} buscarPorAluno(aluno: Aluno): Collection<Disciplina>
+	+ getCodigo(): String
+	+ getNome(): String
+	+ getCargaHoraria(): Integer
+	+ getProfessor(): Professor
+	+ getAlunos(): Collection<Aluno>
+	+ getAulas(): Collection<Aula>
+	+ getProvas(): Collection<Prova>
+	+ setCodigo(codigo: String): void
+	+ setNome(nome: String): void
+	+ setCargaHoraria(cargaHoraria: Integer): void
+	+ setProfessor(professor: Professor): void
+	+ setAlunos(alunos: Collection<Aluno>): void
+	+ setAulas(aulas: Collection<Aula>): void
+	+ setProvas(provas: Collection<Prova>): void
+	+ salvar(): void
+	+ remover(): void
+}
+
+@enduml

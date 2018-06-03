@@ -1,0 +1,10 @@
+@startuml
+
+Administrador --> (Cadastrar usuário)
+
+Administrador --> (Alterar usuário)
+
+Administrador --> (Excluir usuário)
+
+
+@enduml

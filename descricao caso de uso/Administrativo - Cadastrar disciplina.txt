@@ -1,0 +1,38 @@
+Caso de uso: Cadastrar disciplina
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o nome da disciplina
+
+Usuário informa o nome
+
+Sistema busca disciplina por nome
+
+Se disciplina foi encontrada
+
+	Sistema informa que disciplina já existe
+
+	Caso de uso termina
+
+Sistema solicita demais dados (carga_horaria, cpf_professor)
+
+Sistema consulta professor por CPF
+
+Se professor não existe
+	
+	Sistema mostra mensagem de que professor não existe
+
+	Caso de uso termina
+
+Sistema gera codigo da disciplina
+
+Sistema cria nova disciplina
+
+Sistema salva disciplina
+
+Sistema informa que o disciplina foi criada com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

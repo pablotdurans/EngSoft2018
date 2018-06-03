@@ -1,0 +1,32 @@
+Caso de uso: Cadastrar usuário
+Ator: Administrador
+Pré-condição: usuário está logado e é administrador
+------------------------------------------------
+
+Sistema solicita o CPF do usuário
+
+Usuário informa CPF
+
+Sistema busca usuário por cpf
+
+Se usuário foi encontrado
+
+	Sistema informa que usuário já existe
+
+	Caso de uso termina
+
+Sistema solicita dados do usuário (usuario, senha, nome e funcao)
+
+Usuário informa dados do usuário
+
+Usuário solicita salvamento dos dados
+
+Sistema cria novo usuário
+
+Sistema salva usuário
+
+Sistema informa que o usuário foi criado com sucesso
+	
+Caso de uso termina
+	
+-------------------------------------------------

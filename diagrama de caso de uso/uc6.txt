@@ -1,0 +1,18 @@
+@startuml
+
+(Visualizar todos os cursos) <-- Aluno
+
+(Visualizar meus cursos) <-- Aluno 
+
+(Visualizar um curso) <-- Aluno
+
+Aluno --> (Visualizar todas as diciplinas)
+
+Aluno --> (Visualizar minhas disciplinas)
+
+Aluno --> (Visualizar uma disciplina)
+
+Aluno --> (Visualizar histórico)
+
+
+@enduml

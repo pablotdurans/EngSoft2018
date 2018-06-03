@@ -1,0 +1,24 @@
+@startuml
+
+Administrativo --> (Cadastrar curso)
+
+Administrativo --> (Alterar curso)
+
+Administrativo --> (Excluir curso)
+
+Administrativo --> (Cadastrar disciplina) 
+
+Administrativo --> (Alterar disciplina)
+
+(Excluir disciplina) <-- Administrativo  
+
+(Incluir alunos em curso) <-- Administrativo
+
+(Excluir alunos em curso) <-- Administrativo
+
+(Incluir alunos em disciplina) <-- Administrativo
+
+(Excluir alunos em disciplina) <-- Administrativo
+
+
+@enduml

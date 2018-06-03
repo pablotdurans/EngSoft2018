@@ -1,0 +1,25 @@
+Caso de uso: Login
+Ator: Usuario
+------------------------------------------------
+
+Sistema solicita usuário e senha ao usuário
+
+Usuário informa usuário e senha
+
+Sistema busca usuário e senha
+
+Se usuário foi encontrado
+
+    Sistema identificá-o como usuário logado
+
+    Sistema mostra a tela inicial
+
+    Caso de uso termina
+
+Se usuário não foi encotrado
+
+    Sistema mostra mensagem de erro
+
+    Caso de uso termina
+        
+-------------------------------------------------

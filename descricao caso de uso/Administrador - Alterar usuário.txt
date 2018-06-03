@@ -1,0 +1,32 @@
+Caso de uso: Alterar usuário
+Ator: Administrador
+Pré-condição: usuário está logado e é administrador
+------------------------------------------------
+
+Sistema solicita o CPF do usuário
+
+Usuário informa CPF
+
+Sistema busca usuário por cpf
+
+Se usuário não foi encontrado
+
+	Sistema informa que usuário não foi encontrado
+
+	Caso de uso termina
+
+Sistema mostra dados do usuário (usuario, senha, nome e funcao)
+
+Sistema solicita novos dados do usuário
+
+Usuário informa novos dados do usuário
+
+Usuário solicita salvamento dos dados
+
+Sistema altera informações do usuário
+
+Sistema salva usuário
+	
+Caso de uso termina
+
+-------------------------------------------------

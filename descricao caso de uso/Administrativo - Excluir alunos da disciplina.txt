@@ -1,0 +1,32 @@
+Caso de uso: Excluir alunos da disciplina
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita código da disciplina
+
+Usuário informa código da disciplina
+
+Sistema busca disciplina por código
+
+Se disciplina não existe
+
+	Sistema mostra mensagem
+
+	Caso de uso termina
+
+Sistema busca lista de alunos da disciplina
+
+Sistema apresenta lista de alunos da disciplina
+
+Enquanto usuário desejar excluir
+
+	Sistema solicita aluno a exclur 
+
+	Usuário informa aluno a excluir
+
+	Sistema exclui aluno informado
+
+Caso de uso termina
+
+-------------------------------------------------

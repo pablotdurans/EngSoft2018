@@ -1,0 +1,23 @@
+Caso de uso: Logout
+Ator: Usuario
+------------------------------------------------
+
+Sistema pergunta ao usuário se deseja sair
+
+Usuário responde se deseja sair
+
+Se usuário deseja sair
+
+	Sistema seta usuário logado como Nenhum
+
+    Sistema mostra tela de login
+
+   	Caso de uso termina
+
+Se usuário não deseja sair
+
+	Sistema continua na mesma tela
+
+	Caso de uso termina
+
+-------------------------------------------------

@@ -1,0 +1,7 @@
+@startuml
+
+Usuario --> (Login)
+
+Usuario --> (Logout)
+
+@enduml

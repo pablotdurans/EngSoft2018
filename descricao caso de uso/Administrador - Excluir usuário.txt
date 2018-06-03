@@ -1,0 +1,35 @@
+Caso de uso: Excluir usuário
+Ator: Administrador
+Pré-condição: usuário está logado e é administrador
+------------------------------------------------
+
+Sistema solicita o CPF do usuário
+
+Usuário informa CPF
+
+Sistema busca usuário por CPF
+
+Se usuário não foi encontrado
+
+	Sistema informa que usuário não existe
+
+	Caso de uso termina
+
+Sistema pergunta se deseja excluir
+
+Usuário responde se deseja excluir
+
+Se o usuário não deseja excluir
+
+	Sistema mostra mensagem que o usuário não foi excluído
+
+	Caso de uso termina
+
+Sistema exclui o usuário
+
+Sistema informa que o usuário foi removido com sucesso
+
+Caso de uso termina
+
+
+-------------------------------------------------
