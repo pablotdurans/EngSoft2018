@@ -1,0 +1,30 @@
+Caso de uso: Alterar funcionário
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o CPF do funcionário
+
+Usuário informa o CPF do funcionário
+
+Sistema busca funcionário por CPF
+
+Se o funcionário não foi encontrado
+
+	Sistema informa que funcionário não existe
+
+	Caso de uso termina
+
+Sistema solicita dados do funcionário (cpf, nome e departamento)
+
+Usuário informa dados do funcionário
+
+Sistema altera informações do funcionário
+
+Sistema salva funcionário
+
+Sistema informa que o funcionário foi alterado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

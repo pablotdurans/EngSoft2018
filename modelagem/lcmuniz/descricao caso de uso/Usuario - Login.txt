@@ -2,11 +2,11 @@ Caso de uso: Login
 Ator: Usuario
 ------------------------------------------------
 
-Sistema solicita usuário e senha ao usuário
+Sistema solicita email e senha ao usuário
 
-Usuário informa usuário e senha
+Usuário informa email e senha
 
-Sistema busca usuário e senha
+Sistema busca email e senha
 
 Se usuário foi encontrado
 

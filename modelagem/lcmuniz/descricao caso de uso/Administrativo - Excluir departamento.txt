@@ -1,0 +1,24 @@
+Caso de uso: Excluir departamento
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita a sigla do departamento
+
+Usuário informa sigla
+
+Sistema busca departamento por sigla
+
+Se departamento não foi encontrado
+
+	Sistema informa que departamento não existe
+
+	Caso de uso termina
+
+Sistema exclui o departamento
+
+Sistema informa que o departamento foi removido com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

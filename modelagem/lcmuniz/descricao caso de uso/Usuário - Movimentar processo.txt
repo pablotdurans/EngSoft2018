@@ -1,0 +1,24 @@
+Caso de uso: Movimentar processo
+Ator: Usuário
+Pré-condição: usuário está logado 
+------------------------------------------------
+
+Usuário solicita visualização dos processos que estão movimentados para ele
+
+Sistema lista processos
+
+Usuário escolhe um processo
+
+Sistema apresenta processo e movimentações
+
+Usuário solicta nova movimentação informando assunto e usuário ou setor de destino
+
+Sistema fecha movimentacao aberta (data_final, hora_final)
+
+Sistema cria nova movimentacao com dados informados pelo usuário
+
+Sistema informa ao usuário que processo foi movimentado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

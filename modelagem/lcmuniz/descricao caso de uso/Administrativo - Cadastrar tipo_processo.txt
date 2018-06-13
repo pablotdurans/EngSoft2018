@@ -1,0 +1,28 @@
+Caso de uso: Cadastrar tipo de processo
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o nome do tipo de processo
+
+Usuário informa o nome
+
+Sistema busca tipo de processo por nome
+
+Se tipo de processo foi encontrado
+
+	Sistema informa que tipo de processo já existe
+
+	Caso de uso termina
+
+Sistema gera codigo do tipo de processo
+
+Sistema cria novo tipo de processo
+
+Sistema salva tipo de processo
+
+Sistema informa que o tipo de processo foi criado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------
