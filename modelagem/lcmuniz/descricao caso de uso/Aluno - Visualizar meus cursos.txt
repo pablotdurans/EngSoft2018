@@ -1,0 +1,20 @@
+Caso de uso: Visualizar meus cursos
+Ator: Aluno
+Pré-condição: usuário está logado e é aluno
+------------------------------------------------
+
+Usuário solicita visualização dos seus cursos
+
+Sistema busca informações dos cursos do aluno
+
+Se não existem cursos
+
+	Sistema mostra mensagem
+
+	Caso de uso termina
+
+Sistema mostra cursos do aluno
+
+Caso de uso termina
+
+-------------------------------------------------

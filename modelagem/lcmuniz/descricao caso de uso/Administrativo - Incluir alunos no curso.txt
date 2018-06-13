@@ -1,0 +1,48 @@
+Caso de uso: Incluir alunos no curso
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita código do curso
+
+Usuário informa código do curso
+
+Sistema busca curso por código
+
+Se curso não existe
+
+	Sistema mostra mensagem
+
+	Caso de uso termina
+
+Sistema busca lista de alunos do curso
+
+Enquanto usuário desejar incluir
+
+	Sistema solicita cpf do aluno para cadastrar no curso
+
+	Usuário informa cpf do aluno
+
+	Sistema busca aluno por cpf
+
+	Se aluno não existe
+
+		Sistema mostra mensagem de que aluno não existe
+
+	Se aluno existe
+
+		Sistema verifica se aluno já está matriculado no curso
+
+		Se aluno já está no curso
+
+			Sistema mostra mensagem de que aluno já está matriculado no curso
+
+		Se aluno não está no curso
+
+			Sistema o inclui no curso
+
+	Sistema salva curso e alunos
+
+Caso de uso termina
+
+-------------------------------------------------

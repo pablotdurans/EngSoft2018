@@ -1,0 +1,22 @@
+Caso de uso: Visualizar uma disciplina
+Ator: Aluno
+Pré-condição: usuário está logado e é aluno
+------------------------------------------------
+
+Sistema solicita código da disciplina
+
+Usuário informa código da disciplina
+
+Sistema busca informações da disciplina
+
+Se não existe disciplina
+
+	Sistema mostra mensagem
+
+	Caso de uso termina
+
+Sistema mostra disciplina
+
+Caso de uso termina
+
+-------------------------------------------------

@@ -4,4 +4,12 @@ Usuario --> (Login)
 
 Usuario --> (Logout)
 
+Usuario -> (Cadastrar processo)
+
+(Concluir processo) <- Usuario 
+
+(Movimentar processo) <-- Usuario 
+
+(Visualizar processo) <-- Usuario 
+
 @enduml

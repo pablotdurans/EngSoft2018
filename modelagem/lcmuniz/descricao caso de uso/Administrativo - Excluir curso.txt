@@ -1,0 +1,24 @@
+Caso de uso: Excluir curso
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o código do curso
+
+Usuário informa código
+
+Sistema busca curso por código
+
+Se curso não foi encontrado
+
+	Sistema informa que curso não existe
+
+	Caso de uso termina
+
+Sistema exclui o curso
+
+Sistema informa que o curso foi removido com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

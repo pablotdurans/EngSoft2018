@@ -1,0 +1,50 @@
+Caso de uso: Alterar disciplina
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o código da disciplina
+
+Usuário informa o código
+
+Sistema busca disciplina por código
+
+Se disciplina não foi encontrada
+
+	Sistema informa que disciplina não existe
+
+	Caso de uso termina
+
+Sistema solicita nome
+
+Se nome foi alterado
+
+	Sistema busca disciplina com o mesmo nome
+
+	Se disciplina com esse nome já existe
+
+		Sistema mostra mensagem
+
+		Caso de uso termina
+
+Sistema pede demais dados (cargo_horaria, cpf_professor)
+
+Usuário informa demais dados
+
+Sistema consulta professor por CPF
+
+Se professor não existe
+
+	Sistema mostra mensagem de que professor não existe 
+
+	Caso de uso termina
+
+Sistema altera informações da disciplina
+
+Sistema salva disciplina
+
+Sistema informa que a disciplina foi alterado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

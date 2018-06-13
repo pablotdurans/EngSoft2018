@@ -3,16 +3,10 @@
 actor Usuario
 actor Administrador
 actor Administrativo
-actor Professor
-actor Aluno
 
 Usuario <|-- Administrador 
 
 Usuario <|-- Administrativo 
-
-Usuario <|-- Professor
-
-Usuario <|-- Aluno
 
 
 @enduml

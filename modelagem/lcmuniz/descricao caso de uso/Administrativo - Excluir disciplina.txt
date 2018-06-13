@@ -1,0 +1,24 @@
+Caso de uso: Excluir disciplina
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o código da disciplina
+
+Usuário informa código
+
+Sistema busca disciplina por código
+
+Se disciplina não foi encontrada
+
+	Sistema informa que disciplina não existe
+
+	Caso de uso termina
+
+Sistema exclui a disciplina
+
+Sistema informa que a disciplina foi removida com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

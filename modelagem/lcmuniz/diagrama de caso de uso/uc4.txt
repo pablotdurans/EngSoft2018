@@ -1,24 +1,34 @@
 @startuml
 
-Administrativo --> (Cadastrar curso)
+Administrativo --> (Cadastrar departamento)
 
-Administrativo --> (Alterar curso)
+Administrativo --> (Cadastrar funcionario)
 
-Administrativo --> (Excluir curso)
+Administrativo --> (Cadastrar tipo de movimentacao)
 
-Administrativo --> (Cadastrar disciplina) 
+Administrativo --> (Cadastrar tipo de processo) 
 
-Administrativo --> (Alterar disciplina)
+Administrativo --> (Cadastrar tipo de usuário) 
 
-(Excluir disciplina) <-- Administrativo  
+Administrativo --> (Alterar departamento)
 
-(Incluir alunos em curso) <-- Administrativo
+Administrativo --> (Alterar funcionario) 
 
-(Excluir alunos em curso) <-- Administrativo
+(Alterar tipo de movimentacao) <-- Administrativo
 
-(Incluir alunos em disciplina) <-- Administrativo
+(Alterar tipo de processo)  <-- Administrativo
 
-(Excluir alunos em disciplina) <-- Administrativo
+(Alterar tipo de usuário)  <-- Administrativo
+
+(Excluir departamento)  <-- Administrativo
+
+(Excluir funcionario)  <-- Administrativo
+
+ (Excluir tipo de movimentacao)  <-- Administrativo
+
+ (Excluir tipo de processo)   <-- Administrativo
+
+ (Excluir tipo de usuário)   <-- Administrativo
 
 
 @enduml

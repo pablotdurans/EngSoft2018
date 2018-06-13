@@ -4,7 +4,12 @@ Administrador --> (Cadastrar usuário)
 
 Administrador --> (Alterar usuário)
 
-Administrador --> (Excluir usuário)
+Administrador -> (Excluir usuário)
 
+(Cadastrar tipo de usuário) <- Administrador 
+
+(Alterar tipo de usuário) <-- Administrador
+
+(Excluir tipo de usuário) <-- Administrador
 
 @enduml

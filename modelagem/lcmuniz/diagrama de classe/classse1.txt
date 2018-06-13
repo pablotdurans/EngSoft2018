@@ -2,221 +2,242 @@
 
 skinparam handwritten true
 
-Funcao "1" -- "*" Usuario
-Curso "*" - "1" TipoCurso
-Aluno "*" -- "*" Curso
-Aluno "*" -- "*" Aula
-Aluno "1" -- "*" NotaProvaAluno
-Prova "1" -- "*" NotaProvaAluno
-Disciplina "*" -- "1" Professor
-Disciplina "1" -- "*" Aluno
-Disciplina "1" -- "*" Prova
-Disciplina "1" -- "*" Aula
-
+TipoUsuario "1" -- "*" Usuario
 
 Usuario <|-- Administrador
 Usuario <|-- Administrativo
-Usuario <|-- Professor
-Usuario <|-- Aluno
 
-class Funcao {
-	- descricao
-	+ getDescricao(): String
-	+ setDescricao(descricao: String): void
+Departamento "1" -- "*" Funcionario
+
+TipoProcesso "1" -- "*" Processo
+Usuario "1" -- "*" Processo
+
+
+TipoMovimentacao "1" -- "*" Movimentacao
+Processo "1" -- "*" Movimentacao
+Usuario "1" -- "*" Movimentacao
+Funcionario "0..1" -- "1" Usuario
+
+
+class Departamento {
+	- id: Integer
+	- nome: String 
+	- sigla: String
+	- gerarId(): Integer
+	+ {static} buscarPorNome(nome: String): Departamento
+	+ {static} buscarPorSigla(sigla: String): Departamento
+	+ {static} buscarPorId(id: Integer): Departamento
+	+ getId(): Integer
+	+ getNome(): String
+	+ getSigla(): String
+	+ setId(id: Integer)
+	+ setNome(nome: String)
+	+ setSigla(sigla: String)
+	+ salvar()
+	+ excluir()	
+}
+
+class Funcionario {
+	- id: Integer 
+	- nome: String
+	- cpf: String
+	- departamento: Departamento
+	- gerarId(): Integer
+	+ {static} buscarPorNome(nome: String): Funcionario
+	+ {static} buscarPorCpf(cpf: String): Funcionario
+	+ {static} buscarPorId(id: Integer): Funcionario
+	+ {static} buscarPorDepartamento(departamento: Departamento): Collection<Funcionario>
+	+ getId(): Integer
+	+ getNome(): String
+	+ getCpf(): String
+	+ getDepartamento(): Departamento
+	+ setId(id: Integer)
+	+ setNome(nome: String)
+	+ setCpf(cpf: String)
+	+ setDepartamento(departamento: Departamento)
+	+ salvar()
+	+ excluir()
+}
+
+
+class TipoUsuario {
+	- id: Integer 
+	- nome: String
+	- gerarId(): Integer
+	+ {static} buscarPorNome(nome: String): TipoUsuario
+	+ {static} buscarPorId(id: Integer): TipoUsuario
+	+ getId(): Integer
+	+ getNome(): String
+	+ setId(id: Integer)
+	+ setNome(nome: String)
+	+ salvar()
+	+ excluir()	
 }
 
 class Usuario {
-
+	- id: Integer
 	- cpf: String
 	- nome: String
-	- usuario: String
+	- email: String
 	- senha: String
-	- funcao: Funcao
-	+ {static} buscarPorCpf(cppf: String): Usuario
-	+ {static} buscarPorUsuarioESenha(usuario: String, senha: String): Usuario
+	- tipoUsuario: TipoUsuario
+	- funcionario: Funcionario
+	- gerarId(): Integer
+	+ {static} sortearUsuario(Collection<Usuario>): Usuario
+	+ {static} buscarPorId(id: Integer): Usuario
+	+ {static} buscarPorEmail(email: String): Usuario
+	+ {static} buscarPorEmailESenha(email: String, senha: String): Usuario
+	+ {static} buscarPorFuncionario(funcionario: Funcionario): Usuario
+	+ {static} buscarPorTipoUsuario(tipoUsuario: TipoUsuario): Collection<Usuario>
+	+ {static} buscarPorDepartamento(departamento: Departamento): Collection<Usuario>
+	+ getId(): Integer
 	+ getCpf(): String
 	+ getNome(): String
-	+ getUsuario(): String
+	+ getEmail(): String
 	+ getSenha(): String
-	+ getFuncao(): Funcao
+	+ getTipoUsuario(): TipoUsuario
+	+ getFuncionario(): Funcionario
+	+ setId(id: Integer)
 	+ setCpf(cpf: String): void
 	+ setNome(nome: String): void
-	+ setUsuario(usuario: String): void
+	+ setEmail(email: String): void
 	+ setSenha(senha: String): void
-	+ setFuncao(funcao: Funcao): void
+	+ setTipoUsuario(tipoUsuario: TipoUsuario)
+	+ setFuncionario(funcionario: Funcionario)
 	+ salvar(): void
-	+ remover(): void
-	+ login_UC(): void
-	+ logout_UC(): void
+	+ excluir(): void
+	
+	+ cadastrarProcesso_UC()
+	+ concluirProcesso_UC()
+	+ movimentarProcesso_UC()
+	+ visualizarProcesso_UC()
+	+ login_UC()
+	+ logout_UC()
 }
 
-class Aluno {
-	- notas: Collection<NotaProvaAluno>
-	- aulas: Collection<Aula>
-	- cursos: Collection<Curso>
-	+ {static} buscarPorCpf(cpf: String): Aluno
-	+ getNotas(): Collection<NotaProvaAluno>
-	+ getAulas(): Collection<Aula>
-	+ getCursos(): Collection<Curso>
-	+ setNotas: Collection<NotaProvaAluno>): void
-	+ setAulas(aulas: Collection<Aula>): void
-	+ setCursos(cursos: Collection<Curso>): void
-	+ estaMatriculadoNaDisciplina(disciplina: Disciplina): Boolean
-	+ fezProva(prova: Prova): Boolean
-	+ visualizarTodosCursos_UC(): void
-	+ visualizarMeusCursos_UC(): void
-	+ visualizarUmCursos_UC(): void
-	+ visualizarTodasDisciplinas_UC(): void
-	+ visualizarMinhasDisciplinas_UC(): void
-	+ visualizarUmaDisciplinas_UC(): void
-	+ visualizarHistorico_UC(): void
+
+
+class TipoProcesso {
+	- id: Integer 
+	- nome: String
+	- gerarId(): Integer
+	+ {static} buscarPorNome(nome: String): TipoProcesso
+	+ {static} buscarPorId(id: Integer): TipoProcesso
+	+ getId(): Integer
+	+ getNome(): String
+	+ setId(id: Integer)
+	+ setNome(nome: String)
+	+ salvar()
+	+ excluir()	
 }
 
-class Professor {
-	- disciplinas: Collection<Disciplina>
-	+ getDisciplinas(): Collection<Disciplina>
-	+ setDisciplinas(disciplinas: Collection<Disciplina>): void
-	+ {static} buscarPorCpf(cppf: String): Professor
-	+ cadastrarAulaDisciplina_UC(): void
-	+ alterarAulaDisciplina_UC(): void
-	+ excluirAulaDisciplina_UC(): void
-	+ cadastrarProvaDisciplina_UC(): void
-	+ alterarProvaDisciplina_UC(): void
-	+ excluirProvaDisciplina_UC(): void
-	+ cadastrarPresencaAluno_UC(): void
-	+ excluirPresencaAlun_UC(): void
-	+ cadastrarAlterarNotaAlunoProva_UC(): void
-	+ excluirNotaAlunoProva_UC(): void
+
+class Processo {
+	- id: Integer, 
+	- numero: String, 
+	- usuario: Usuario , 
+	- assunto: String, 
+	- tipoProcesso: TipoProcesso
+	- gerarId(): Integer
+	+ {static} buscarPorNumero(numero: String): Processo
+	+ {static} buscarPorId(id: Integer): Processo
+	+ {static} buscarPorusuario(usuario: Usuario): Collection<Processo>	
+	+ getId(): Integer
+	+ getNumero(): String
+	+ getUsuario(): Usuario
+	+ getAssunto(): String
+	+ getTipoProcesso(): TipoProcesso
+	+ setId(id: Integer)
+	+ setNumero(numero: String) 
+	+ setUsuario(usuario: Usuario)
+	+ setAssunto(assunto: String)
+	+ setTipoProcesso(tipoProcesso: TipoProcesso)
+	+ salvar()
+	+ excluir()
 }
+
+
+class TipoMovimentacao {
+	- id: Integer 
+	- nome: String
+	- gerarId(): Integer
+	+ {static} buscarPorNome(nome: String): TipoMovimentacao
+	+ {static} buscarPorId(id: Integer): TipoMovimentacao
+	+ getId(): Integer
+	+ getNome(): String
+	+ setId(id: Integer)
+	+ setNome(nome: String)
+	+ salvar()
+	+ excluir()	
+}
+
+
+class Movimentacao {
+	- id: Integer, 
+	- observacao: String, 
+	- tipoMovimentacao: TipoMovimentacao 
+	- processo: Processo 
+	- dataInicio: Date
+	- horaInicio: Time
+	- doUsuario: Usuario
+	- dataFim: Date
+	- horaFim: Time
+	- paraUsuario: Usuario
+	- gerarId(): Integer
+	+ {static} buscarPorId(): Movimentacao
+	+ {static} buscarPorProcesso(processo: Processo): Collection<Movimentacao>
+	+ {static} buscarAbertas(usuario: Usuario): Collection<Movimentacao>
+	+ {static} buscarAbertasPorProcesso(processo: Processo): Collection<Movimentacao>
+	+ getId(): Integer
+	+ getObservacao(): String
+	+ getTipoMovimentacao(): TipoMovimentacao
+	+ getProcesso(): Processo
+	+ getDataInicio(): Date
+	+ getHoraInicio(): Time
+	+ getDoUsuario(): Usuario
+	+ getDataFim(): Date
+	+ getHoraFim(): Time
+	+ getParaUsuario(): Usuario
+	+ setId(id: Integer)
+	+ setObservacao(observacao: String) 
+	+ setTipoMovimentacao(tipoMovimentacao: TipoMovimentacao)
+	+ setProcesso(processo: Processo)
+	+ setDataInicio(dataInicio: Date)
+	+ setHoraInicio(horaInicio: Time)
+	+ setDoUsuario(doUsuario: Usuario)
+	+ setDataFim(dataFim: Date)
+	+ setHoraFim(horaFim: Time)
+	+ setParaUsuario(paraUsuario: Usuario)	
+	+ salvar()
+	+ excluir()	
+}
+
 
 class Administrativo {
-	+ cadastrarCurso_UC(): void
-	+ alterarCurso_UC(): void
-	+ excluirCurso_UC(): void
-	+ cadastrarDisciplina_UC(): void
-	+ alterarDisciplina_UC(): void
-	+ excluirDisciplina_UC(): void
-	+ incluirAlunosCurso_UC(): void
-	+ excluriAlunosCurso_UC(): void
-	+ incluirAlunosDisciplina_UC(): void
-	+ excluirAlunosDisciplina_UC(): void
+	+ cadastrarDepartamento_UC()
+	+ cadastrarFuncionario_UC(): void
+	+ cadastrarProcesso_UC(): void
+	+ cadastrarTipoMovimentacao_UC()
+	+ cadastrarTipoProcesso_UC()
+	+ alterarDepartamento_UC()
+	+ alterarFuncionario_UC(): void
+	+ alterarProcesso_UC(): void
+	+ alterarTipoMovimentacao_UC()
+	+ alterarTipoProcesso_UC()
+	+ excluirDepartamento_UC()
+	+ excluirFuncionario_UC(): void
+	+ excluirProcesso_UC(): void
+	+ excluirTipoMovimentacao_UC()
+	+ excluirTipoProcesso_UC()
 }
 
 class Administrador {
-	+ cadastrarUsuario_UC(): void
-	+ alterarUsuario_UC(): void
-	+ excluirUsuario_UC(): void	
-}
-
-class TipoCurso {
-	- descricao: String
-	+ getDescricao(): String
-	+ setDescricao(descricao: String): void
-}
-
-class Curso {
-	- codigo: String
-	- nome: String
-	- tipoCurso: TipoCurso
-	- alunos: Collection<Aluno>
-	- gerarCodigo(): String
-	+ {static} buscarPorNome(nome: String): Curso
-	+ {static} buscarPorCodigo(codigo: String): Curso
-	+ {static} buscarPorAluno(aluno: Aluno): Collection<Curso>
-	+ getCodigo(): String
-	+ getNome(): String
-	+ getTipoCurso(): String
-	+ getAlunos(): Collection<Aluno>
-	+ setCodigo(codigo: String): void
-	+ setNome(nome: String): void
-	+ setTipoCurso(tipoCurso: TipoCurso): void
-	+ setAlunos(alunos: Collection<Aluno>): void
-	+ salvar(): void
-	+ remover(): void
-}
-
-class Aula {
-	- disciplina: Disciplina
-	- assunto: String
-	- data: Date
-	- hora: Time
-	- alunos: Collection<Aluno>
-	+ getDisciplina(): Disciplina
-	+ getAssunto(): String
-	+ getData(): Date
-	+ getHora(): Time
-	+ getAlunos(): Collection<Aluno>
-	+ setDisciplina(disciplina: Disciplina): void
-	+ setAssunto(assunto: String): void
-	+ setData(data: Date): void
-	+ setHora(hora: Time): void
-	+ setAlunos(alunos: Collection<Aluno>): void
-	+ salvar(): void
-	+ remover(): void
-}
-
-class Prova {
-	- disciplina: Disciplina
-	- descricao: String
-	- data: Date
-	- hora: Time
-	- notas: Collection<NotaProvaAluno>
-	+ getDisciplina(): Disciplina
-	+ getDescricao(): String
-	+ getData(): Date
-	+ getHora(): Time
-	+ getNotas(): Collection<NotaProvaAluno>
-	+ setDisciplina(disciplina: Disciplina): void
-	+ setDescricao(descricao: String): void
-	+ setData(data: Date): void
-	+ setHora(hora: Time): void
-	+ setNotas(notasProvaAlunos: Collection<NotaProvaAluno>): void
-	+ salvar(): void
-	+ remover(): void
-}
-
-class NotaProvaAluno {
-	- prova: Prova
-	- aluno: Aluno
-	- nota: Double
-	+ getProva(): Prova
-	+ getAluno(): Aluno
-	+ getNota(): Double
-	+ setProva(prova: Prova): void
-	+ setAluno(aluno: Aluno)
-	+ setNota(nota: Double)
-	+ salvar(): void
-	+ remover(): void
-}
-
-class Disciplina {
-	- codigo: String
-	- nome: String
-	- cargaHoraria: Integer
-	- professor: Professor
-	- alunos: Collection<Aluno>
-	- aulas: Collection<Aula>
-	- provas: Collection<Prova>
-	- geraCodigo(): String
-	+ {static} buscarPorNome(nome: String): Disciplina
-	+ {static} buscarPorCodigo(codigo: String): Disciplina
-	+ {static} buscarPorAluno(aluno: Aluno): Collection<Disciplina>
-	+ getCodigo(): String
-	+ getNome(): String
-	+ getCargaHoraria(): Integer
-	+ getProfessor(): Professor
-	+ getAlunos(): Collection<Aluno>
-	+ getAulas(): Collection<Aula>
-	+ getProvas(): Collection<Prova>
-	+ setCodigo(codigo: String): void
-	+ setNome(nome: String): void
-	+ setCargaHoraria(cargaHoraria: Integer): void
-	+ setProfessor(professor: Professor): void
-	+ setAlunos(alunos: Collection<Aluno>): void
-	+ setAulas(aulas: Collection<Aula>): void
-	+ setProvas(provas: Collection<Prova>): void
-	+ salvar(): void
-	+ remover(): void
+	+ cadastrarUsuario_UC()
+	+ alterarUsuario_UC()
+	+ excluirUsuario_UC()
+	+ cadastrarTipoUsuario_UC()
+	+ alterarTipoUsuario_UC()
+	+ excluirTipoUsuario_UC()
 }
 
 @enduml

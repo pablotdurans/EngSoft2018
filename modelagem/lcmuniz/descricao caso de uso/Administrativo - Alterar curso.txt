@@ -1,0 +1,46 @@
+Caso de uso: Alterar curso
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o código do curso
+
+Usuário informa código do curso
+
+Sistema busca curso por código
+
+Se curso não foi encontrado
+
+	Sistema informa que curso não existe
+
+	Caso de uso termina
+
+Sistema solicita nome do curso
+
+Usuário informa nome do curso
+
+Sistema verfica se o nome foi alterado
+
+Se nome foi alterado
+
+	Sistema busca curso com o novo nome 
+
+    Se curso com esse nome já existe
+
+       	Sistema mostra mensagem de que curso já existe
+
+        Caso de uso termina
+
+Sistema pede demais dados do curso (tipo)
+
+Usuário entra demais dados do curso
+
+Sistema altera informações do curso
+        
+Sistema salva curso
+
+Sistema informa que o curso foi alterado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------
