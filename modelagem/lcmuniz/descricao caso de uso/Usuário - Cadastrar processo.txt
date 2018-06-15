@@ -1,0 +1,22 @@
+Caso de uso: Cadastrar processo
+Ator: Usuário
+Pré-condição: usuário está logado 
+------------------------------------------------
+
+Usuário solicita abertura de novo processo
+
+Sistema solicita dados do novo processo (assunto, tipo_processo)
+
+Usuário informa dados do novo processo
+
+Sistema gera novo número para o processo
+
+Sistema sorteia usuário de destino dentre os usuários do setor de protocolo
+
+Sistema executa a movimentação inicial (data_inicial, hora_inicial, para_usuario)
+
+Sistema informa ao usuário que o processo foi aberto.
+
+Caso de uso termina
+
+-------------------------------------------------

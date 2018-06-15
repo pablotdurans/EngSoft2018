@@ -1,0 +1,24 @@
+Caso de uso: Excluir tipo de processo
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o nome do tipo de processo
+
+Usuário informa o nome do tipo de processo
+
+Sistema busca tipo de processo por nome
+
+Se tipo de processo não foi encontrado
+
+	Sistema informa que tipo de processo não existe
+
+	Caso de uso termina
+
+Sistema exclui o tipo de processo
+
+Sistema informa que o tipo de processo foi removido com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

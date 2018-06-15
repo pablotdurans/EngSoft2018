@@ -3,11 +3,11 @@ Ator: Administrador
 Pré-condição: usuário está logado e é administrador
 ------------------------------------------------
 
-Sistema solicita o CPF do usuário
+Sistema solicita o email do usuário
 
-Usuário informa CPF
+Usuário informa email
 
-Sistema busca usuário por cpf
+Sistema busca usuário por email
 
 Se usuário não foi encontrado
 
@@ -15,7 +15,7 @@ Se usuário não foi encontrado
 
 	Caso de uso termina
 
-Sistema mostra dados do usuário (usuario, senha, nome e funcao)
+Sistema mostra dados do usuário (email, senha, tipo_usuario e funcionario)
 
 Sistema solicita novos dados do usuário
 

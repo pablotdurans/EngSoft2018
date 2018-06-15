@@ -1,0 +1,20 @@
+Caso de uso: Concluir processo
+Ator: Usuário
+Pré-condição: usuário está logado
+------------------------------------------------
+
+Usuário solicita seus processos
+
+Sistema lista processos do usuário que estão movimentados para ele
+
+Usuário escolhe um processo
+
+Usuário solicita conclusão do processo
+
+Sistema conclui processo (data_final, hora_final, tipo_movimentacao=tipomovfinal)
+
+Sistema informa ao usuário que processo foi concluído com sucesso.
+
+Caso de uso termina
+
+-------------------------------------------------
