@@ -1,0 +1,30 @@
+Caso de uso: Alterar tipo de movimentação
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o nome do tipo de movimentação
+
+Usuário informa o nome do tipo de movimentação
+
+Sistema busca tipo de movimentação por nome
+
+Se o tipo de movimentação não foi encontrado
+
+	Sistema informa que tipo de movimentação não existe
+
+	Caso de uso termina
+
+Sistema solicita dados do tipo de movimentação (nome)
+
+Usuário informa dados do tipo de movimentação
+
+Sistema altera informações do tipo de movimentação
+
+Sistema salva tipo de movimentação
+
+Sistema informa que o tipo de movimentação foi alterado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

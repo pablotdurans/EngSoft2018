@@ -1,0 +1,24 @@
+Caso de uso: Excluir funcionário
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o CPF do funcionário
+
+Usuário informa CPF
+
+Sistema busca funcionário por CPF
+
+Se funcionário não foi encontrado
+
+	Sistema informa que funcionário não existe
+
+	Caso de uso termina
+
+Sistema exclui o funcionário
+
+Sistema informa que o funcionário foi removido com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------

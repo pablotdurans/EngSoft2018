@@ -1,0 +1,30 @@
+Caso de uso: Alterar tipo de processo
+Ator: Administrativo
+Pré-condição: usuário está logado e é administrativo
+------------------------------------------------
+
+Sistema solicita o nome do tipo de processo
+
+Usuário informa o nome do tipo de processo
+
+Sistema busca tipo de processo por nome
+
+Se o tipo de processo não foi encontrado
+
+	Sistema informa que tipo de processo não existe
+
+	Caso de uso termina
+
+Sistema solicita dados do tipo de processo (nome)
+
+Usuário informa dados do tipo de processo
+
+Sistema altera informações do tipo de processo
+
+Sistema salva tipo de processo
+
+Sistema informa que o tipo de processo foi alterado com sucesso
+
+Caso de uso termina
+
+-------------------------------------------------
